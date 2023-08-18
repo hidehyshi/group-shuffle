@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>リストシャッフル結果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/javascripts/scripts.js"></script>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <h2 class="text-center py-1">リストシャッフル結果</h2>
+            <ul class="list-group py-3" id="shuffledList">
+                <% for (let i = 0; i < shuffledList.length; i++) { %>
+                    <% if (i % 2 === 0 && i !== 0 && shuffledList.length - 1 !== i) { %>
+                        </ul><ul class="list-group py-3">
+                    <% } %>
+                    <li class="list-group-item"><%= shuffledList[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+        <input type="button" class="btn btn-secondary" onclick="history.back()" value="戻る">
+    </div>
+</body>
+</html>
